@@ -1,0 +1,18 @@
+particles {
+  coordinates = 0,
+  standard_beam {
+    n = 30,
+    tob = 0,
+    mass = 1.007276466812,
+    charge = 1,
+    ke = 30000,
+    cwf = 1,
+    color = 0,
+    direction = cone_direction_distribution {
+      axis = vector(1, 0, 0),
+      half_angle = 1,
+      fill = true
+    },
+    position = vector(0, 7, 7)
+  }
+}

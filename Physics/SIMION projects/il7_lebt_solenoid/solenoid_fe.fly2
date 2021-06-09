@@ -1,0 +1,17 @@
+particles {
+  coordinates = 0,
+  standard_beam {
+    n = 1000,
+    tob = 0,
+    mass = 1.007276466812,
+    charge = 1,
+    ke = 2,
+    cwf = 1,
+    color = 3,
+    direction = vector(1, 0, 0),
+    position = gaussian3d_distribution {
+      mean = vector(0.01, 0, 0),
+      stdev = vector(0, 0.55, 0.55)
+    }
+  }
+}

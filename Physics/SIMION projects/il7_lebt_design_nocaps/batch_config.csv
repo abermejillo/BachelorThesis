@@ -1,0 +1,29 @@
+# File to be read by simion in order to perform batch simulations,,,,,,,,,
+# for pit30 repeller configuration design.,,,,,,,,,
+# Author: izpilab, gaudee, UPV/EHU.,,,,,,,
+# Contact: inigo.arredondo@ehu.eus,,,,,,,,,
+# Date: 2019/03/14,,,,,,,,,
+# File format:,,,,,,,,,
+#   It is a csv file with the following fields:,,,,,,,,,
+"#   Field 1:  ""Plasma Electrode voltage in V""",,,,,,,,,
+"#   Field 2:  ""Repeller Electrode initial voltage in V""",,,,,,,,,
+"#   Field 3:  ""Repeller Electrode final voltage in V""",,,,,,,,,
+"#   Field 4:  ""Repeller Electrode final increment in V""",,,,,,,,,
+"#   Field 5:  ""Solenoid 1 initial total current in A""",,,,,,,,,
+"#   Field 6:  ""Solenoid 1 final total current in A""",,,,,,,,,
+"#   Field 7: ""Solenoid 1 step total current in A""",,,,,,,,,
+"#   Field 8:  ""Solenoid 2 initial total current in A""",,,,,,,,,
+"#   Field 9:  ""Solenoid 2 final total current in A""",,,,,,,,,
+"#   Field 10: ""Solenoid 2 step total current in A""",,,,,,,,,
+# e.g:,,,,,,,,,
+# 20000,4000,4500,500,18500,18500,500,28500,28500,500
+# 20000,5000,5500,500,18500,18500,500,28500,28500,500
+# (All in the same line),,,,,,,,,
+,,,,,,,,,
+#30000,15000,16000,1000,18500,18500,500,30500,31000,500
+#30000,15000,16000,1000,19000,19500,500,30500,31000,500
+#30000,15000,16000,1000,20000,20000,500,30000,31000,500
+#30000,15000,16000,1000,20000,20000,500,32000,36000,1000
+8000,4000,4000,1000,32500,32500,3000,-32500,-32500,3000
+#8000,4000,4000,1000,32500,32500,3000,10000,10000,3000
+

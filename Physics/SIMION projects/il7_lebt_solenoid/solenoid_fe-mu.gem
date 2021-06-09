@@ -1,0 +1,62 @@
+
+; Izpilab EHU
+; Contacat: inigo.arredondo@ehu.eus
+; date: 2020/01/14
+; Description: 
+;   relative permeability for simion_solenoid_fe
+;   original code from c-magnet@simion/examples/magentic_potential
+
+# local x_width = _G.x_width or 0
+# local y_height = _G.y_height or 0
+; distance between solenoids in mm
+# local sol_gap = 187
+; fe thikness in mm x-axis
+# local sol_w_fe = 12
+; fe thikness in mm y-axis
+# local sol_h_fe = 25
+; solenoid external width in mm
+# local sol_width = 161
+; solenoid external height in mm
+# local sol_height = 111
+; added external fe height
+# local sol_added_h = 20
+; added external fe width
+# local sol_added_w = 10
+; subtracted height 
+# local sol_sub_h = 10
+; one of the "legs" is thinner than the other
+# local sol_sym_w = 2
+
+pa_define{(1006+2*x_width)*mm,(160+y_height)*mm,dx=1,symmetry='cylindrical',type='magnetic', refinable=false} ; 
+
+locate(349,30,0) {
+
+  ; First fill all space by default with relative permeability 1.
+  n(1) {
+    fill { within { box3d(-1E+6,-1E+6,-1E+6, 1E+6,1E+6,1E+6) } }
+  }
+  ;first thin "leg"
+  ;top box
+  ;second "leg"
+  ;added box to the thin "leg"
+  n(2) {
+    fill {
+      within_inside { box(0,sol_sub_h, sol_w_fe-sol_sym_w,sol_height) }
+      within_inside { box(0,sol_height, sol_width,sol_height-sol_h_fe) }
+      within_inside { box(sol_width,sol_height, sol_width-sol_w_fe,0) }
+      within_inside { box(-sol_added_w,0 0,sol_added_h) }
+    }
+  }
+} 
+  
+locate(349+sol_gap+sol_width,30,0) {  
+  n(2) {
+    fill {
+      within_inside { box(0,0, sol_w_fe,sol_height) }
+      within_inside { box(0,sol_height, sol_width,sol_height-sol_h_fe) }
+      within_inside { box(sol_width,sol_height, sol_width-sol_w_fe+sol_sym_w,sol_sub_h) }
+      within_inside { box(sol_width,0, sol_width+sol_added_w,sol_added_h) }
+    }
+  }
+
+}

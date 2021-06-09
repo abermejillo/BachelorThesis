@@ -1,0 +1,18 @@
+particles {
+  coordinates = 0,
+  standard_beam {
+    n = 1000,
+    tob = 0,
+    mass = 1.007276466812,
+    charge = 1,
+    ke = 2,
+    cwf = 1,
+    color = 3,
+    direction = vector(1, 0, 0),
+    position = line_sequence {
+      first = vector(0.01, -1.75, 0),
+      last = vector(0.01, 1.75, 0),
+      n = 1000
+    }
+  }
+}

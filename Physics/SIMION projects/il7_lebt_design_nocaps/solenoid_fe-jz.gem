@@ -1,0 +1,53 @@
+; Izpilab EHU
+; Contacat: inigo.arredondo@ehu.eus
+; date: 2020/01/14
+; Description: 
+;   current density for simion_solenoid_fe
+;   original code from c-magnet@simion/examples/magentic_potential
+;   Use different potentials in each non-pole in order to find each one later.
+
+# local x_width = _G.x_width or 0
+# local y_height = _G.y_height or 0
+; distance between solenoids in mm
+# local sol_gap = 187
+; fe thikness in mm x-axis
+# local sol_w_fe = 12
+; fe thikness in mm y-axis
+# local sol_h_fe = 25
+; al thickness in mm
+# local sol_w_al = 3
+; solenoid external width in mm
+# local sol_width = 161
+; solenoid external height in mm regarding the coils start point 111-13
+# local sol_height = 98
+; subcoil thickness
+# local sol_sub_w = 17
+; one of the "legs" is thinner than the other
+# local sol_sym_w = 2
+
+pa_define{(1006+2*x_width)*mm,(160+y_height)*mm,dx=0.1,symmetry='cylindrical',type='magnetic', refinable=false} ;
+
+locate(349,43,0) {
+
+  n(1)
+  {
+    for i= 0,6 do
+      box(sol_w_fe +i*(sol_sub_w+sol_w_al)+sol_sym_w,sol_height-sol_h_fe-sol_w_al, 
+          sol_w_fe + sol_sub_w + i*(sol_sub_w+sol_w_al),0)
+    end
+  } 
+}
+
+locate(349+sol_gap+sol_width,43,0) {
+
+  n(1.001)
+  {
+    for i= 0,6 do
+      box(sol_w_fe + 0.5 +i*(sol_sub_w+sol_w_al),sol_height-sol_h_fe-sol_w_al, 
+          sol_w_fe + 0.5 + sol_sub_w + i*(sol_sub_w+sol_w_al),0)
+    end
+  } 
+}
+
+
+

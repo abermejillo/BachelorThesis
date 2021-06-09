@@ -1,0 +1,18 @@
+particles {
+  coordinates = 0,
+  standard_beam {
+    tob = 0,
+    mass = 1,
+    charge = 0,
+    ke = 0.1,
+    cwf = 1,
+    color = 0,
+    direction = vector(1, 1, 0),
+    position = circle_sequence {
+      center = vector(10, 0, 0),
+      normal = vector(1, 0, 0),
+      radius = 40,
+      n = 8
+    }
+  }
+}
