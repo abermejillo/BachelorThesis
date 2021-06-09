@@ -1,2 +1,2 @@
 # BachelorThesis
-This repository contains ath emost important code developed through the realization of my Bachelor Theses. Electronic engineering: Automatic experimental  characterization of a magnetic  transport for low energy proton  beams. And Physics: Optical system for low energy proton beams: Extraction, focusing and transport.
+This repository contains the most important code developed through the realization of my Bachelor Theses in the University of the Basque country, in colaboration with the GAUDEE research group and within the Linac-7 project. Electronic engineering: Automatic experimental  characterization of a magnetic  transport for low energy proton  beams. And Physics: Optical system for low energy proton beams: Extraction, focusing and transport.
