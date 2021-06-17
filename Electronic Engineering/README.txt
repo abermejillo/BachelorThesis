@@ -8,4 +8,7 @@ First it is necessary to upload to the arduino one of the codes in the Arduino f
 "mlx_innermedia" is the file used in the project,it performs the mean of 100 measurements 
 in order to not collapse the USB.
 
+The measured magnetic fields are not corrected according to the characterization performed in this project. A post-procesing is needed. 
+For the module simply perform this operation: (1/1.2411)*(B-0.01)
+
 Dipole and magnetic_profile contain codes for plotting acquired data. And the corresponding data files.
